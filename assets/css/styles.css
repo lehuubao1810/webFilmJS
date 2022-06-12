@@ -185,7 +185,7 @@
     top: 0;
     left: 0;
     z-index: 10;
-    
+    display: flex;                                                                                                                                                                                                                                  
 }
 
 .video-block {
@@ -194,7 +194,128 @@
     position: absolute;
     top: 10%;
     left: 10%;
+    /* z-index: 1; */
+}
+
+.btn-eps {
+    position: fixed;
+    bottom: 2%;
+    left: 43%;
+    padding: 10px 20px;
+    color: #fff;
+    background: #253146;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 12;
+}
+
+.btn-eps:hover {
+    background: rgb(77, 141, 236);
+    box-shadow: 0 0 5px rgb(77, 141, 236);
+}
+
+.list-eps {
+    position: fixed;
+    top: 10%;
+    left: 10%;
     z-index: 11;
+    width: 80%;
+    height: 80%;
+    max-height: 80%;
+    background: #253146;
+    color: #fff;
+    overflow: auto;
+    
+    padding: 20px;
+    text-align: center;
+}
+
+/* Scroll */
+.list-eps::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 10px;
+    background-color: #6382b8;
+}
+.list-eps::-webkit-scrollbar-thumb {
+    background-color: rgb(236, 162, 77);
+    border-radius: 10px;
+} 
+
+.item-ep {
+    display: inline-block;
+    padding: 4px 20px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    background: #6382b8;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.item-ep:hover {
+    background: rgb(77, 141, 236);
+    box-shadow: 0 0 5px rgb(77, 141, 236);
+}
+
+.current-ep {
+    background: rgb(236, 162, 77);
 }
 
 /* END VIDEO */
+
+/* PAGE NUMBER */
+
+.list-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.page-item a {
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    background: #253146;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.page-item a:hover {
+    background: rgb(77, 141, 236);
+    box-shadow: 0 0 5px rgb(77, 141, 236);
+}
+
+.current-page a{
+    background: rgb(236, 162, 77);
+    /* box-shadow: 0 0 5px rgb(77, 141, 236); */
+}
+
+
+
+/* END PAGE NUMBER */
+
+/* BEGIN FOOTER */
+
+#footer {
+    width: 100%;
+    height: 80px;
+    /* background-color: rgb(15 23 42); */
+    padding: 0 100px;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    line-height: 80px;
+    color: #fff;
+}
+
+#footer a {
+    color: #fff;
+    text-shadow: 0 0 10px #fff;
+    text-decoration: none;
+}
+
+/* END FOOTER */

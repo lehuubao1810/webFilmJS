@@ -17,9 +17,7 @@ const listFilm = document.querySelector('.list-film');
 
 const Main = document.querySelector('#main');
 
-function checkImg(imgLink) {
 
-}
 
 dataFilm(function (datas) {
     // var dataItems = datas.pageProps.data.items; -search
@@ -64,34 +62,86 @@ dataFilm(function (datas) {
     var itemTitle = document.querySelectorAll('.item-title');
     console.log(itemTitle);
     itemTitle.forEach(function (item) {
+        // Click film to watch
         item.onclick = function () {
             var slug = item.getAttribute('id');
             var filmModal = document.createElement('div');
             filmModal.classList.add('film-modal');
-            var apiFilm = `https://ophim1.com/phim/${slug}`;
+
+            var epsBtn = document.createElement('div');
+            epsBtn.classList.add('btn-eps');
+            epsBtn.innerText = 'Danh sách tập phim';
             
+            var apiFilm = `https://ophim1.com/phim/${slug}`;
+
             fetch(apiFilm) 
                 .then(response => response.json())
                 .then(function (data) {
                     var srcVideo = data.episodes[0].server_data[0].link_embed;
+                    // 
+                    var listEps = data.episodes[0].server_data;
+                    // 
                     console.log(srcVideo);
                     filmModal.innerHTML = `
                     <iframe class="video-block" src="${srcVideo}">
                     </iframe>
                     `;
                     Main.appendChild(filmModal);
+                    Main.appendChild(epsBtn);
+                    var listEpsEl = document.createElement('div');
+                    listEpsEl.classList.add('list-eps');
 
+                    // list eps of film
+                    listEps.forEach(function (item) {
+                        var itemEp = document.createElement('div');
+                        itemEp.classList.add('item-ep');
+                        itemEp.setAttribute('id', listEps.indexOf(item));
+                        itemEp.innerText = `${item.name}`;
+                        listEpsEl.appendChild(itemEp);
+                        // var itemEp = `<div class="item-ep">${item.name}</div>`;
+                        // itemEps.push(itemEp);
+                    })
+
+                    // Handle click button eps
+                    epsBtn.onclick = function () {
+                        Main.appendChild(listEpsEl);
+
+                        // Handle click item ep
+                        var itemEps = document.querySelectorAll('.item-ep');
+                        itemEps.forEach(function (item) {
+                            item.onclick = function () {
+                                var index = item.getAttribute('id');
+                                var srcVideo = data.episodes[0].server_data[index].link_embed;
+                                filmModal.innerHTML = `
+                                <iframe class="video-block" src="${srcVideo}">
+                                </iframe>
+                                `;
+                                listEpsEl.remove();
+                            }
+                        })
+                    }
+
+                    ////////////////
+                    // Click close
+                    ///////////////
+                    filmModal.onclick = function () {
+                        // filmModal.remove();
+                        // epsBtn.remove();     
+                        if ( Main.contains(listEpsEl) ) {
+                            listEpsEl.remove();
+                            // epsBtn.remove();
+                        } else {
+                            filmModal.remove();
+                            epsBtn.remove();
+                        }
+                    }
                 })
-
-            filmModal.onclick = function () {
-                filmModal.remove();
-            }
-            
         }
     })
 
     ////////////////
     // Chức năng tìm kiếm
+    ////////////////
     searchBtn.onclick = function () {
         listFilm.innerHTML = '';
         var apiSearch = `https://ophim.tv/_next/data/EdPTJFKDsGXjfsHhzTxX1/tim-kiem.json?keyword=${inputBox.value}`;
@@ -142,28 +192,79 @@ dataFilm(function (datas) {
             var itemTitle = document.querySelectorAll('.item-title');
             console.log(itemTitle);
             itemTitle.forEach(function (item) {
+                // Click film to watch
                 item.onclick = function () {
                     var slug = item.getAttribute('id');
                     var filmModal = document.createElement('div');
                     filmModal.classList.add('film-modal');
                     var apiFilm = `https://ophim1.com/phim/${slug}`;
+
+                    var epsBtn = document.createElement('div');
+                    epsBtn.classList.add('btn-eps');
+                    epsBtn.innerText = 'Danh sách tập phim';
                     
                     fetch(apiFilm) 
                         .then(response => response.json())
                         .then(function (data) {
                             var srcVideo = data.episodes[0].server_data[0].link_embed;
+                            // 
+                            var listEps = data.episodes[0].server_data;
+                            // 
                             console.log(srcVideo);
                             filmModal.innerHTML = `
                             <iframe class="video-block" src="${srcVideo}">
                             </iframe>
                             `;
                             Main.appendChild(filmModal);
+                            Main.appendChild(epsBtn);
+                            var listEpsEl = document.createElement('div');
+                            listEpsEl.classList.add('list-eps');
+
+                            // list eps of film
+                            listEps.forEach(function (item) {
+                                var itemEp = document.createElement('div');
+                                itemEp.classList.add('item-ep');
+                                itemEp.setAttribute('id', listEps.indexOf(item));
+                                itemEp.innerText = `${item.name}`;
+                                listEpsEl.appendChild(itemEp);
+                                // var itemEp = `<div class="item-ep">${item.name}</div>`;
+                                // itemEps.push(itemEp);
+                            })
         
+                            // Handle click button eps
+                            epsBtn.onclick = function () {
+                                Main.appendChild(listEpsEl);
+        
+                                // Handle click item ep
+                                var itemEps = document.querySelectorAll('.item-ep');
+                                itemEps.forEach(function (item) {
+                                    item.onclick = function () {
+                                        var index = item.getAttribute('id');
+                                        var srcVideo = data.episodes[0].server_data[index].link_embed;
+                                        filmModal.innerHTML = `
+                                        <iframe class="video-block" src="${srcVideo}">
+                                        </iframe>
+                                        `;
+                                        Main.removeChild(listEpsEl);
+                                    }
+                                })
+                            }
+        
+                            ////////////////
+                            // Click close
+                            ///////////////
+                            filmModal.onclick = function () {
+                                // filmModal.remove();
+                                // epsBtn.remove();     
+                                if ( Main.contains(listEpsEl) ) {
+                                    Main.removeChild(listEpsEl);
+                                    // epsBtn.remove();
+                                } else {
+                                    filmModal.remove();
+                                    epsBtn.remove();
+                                }
+                            }
                         })
-        
-                    filmModal.onclick = function () {
-                        filmModal.remove();
-                    }
                     
                 }
             })

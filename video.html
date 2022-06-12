@@ -4,20 +4,285 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBP. Film</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <title>Video demo</title>
+    <link rel="stylesheet" href="./assets/css/video.css">
+    <link rel="shortcut icon" href="./assets/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-
     <div id="main">
-        <div class="modal">  
-            <div id="film" class="film-modal">
-                <iframe class="video-block" src="https://vie.haiphim.com/share/40cccad2ac57c29035a432356f3c978d">
-                </iframe>
+        <header id="header">
+            <div class="nav">
+                <div class="logo">
+                    <a href="./">BBP.</a>
+                </div>
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="./" class="menu-item">Trang chủ</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="video.html" class="menu-item">Phim mới</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-item">Giới thiệu</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-item">API</a>
+                    </li>
+                </ul>
+                <div class="search-box">
+                    <input type="text" class="input-box" placeholder="Tìm kiếm phim...">
+                        <i class="fa-solid fa-magnifying-glass icon-search"></i>
+                    </input>
+                </div>
+                
             </div>
-        </div>
+            <!-- <div class="slider">
+                <div class="logo-picture">
+                    <img src="./assets/img/logo.png" alt="">
+                </div>
+            </div> -->
+        </header>
+        <!-- <section id="content">
+            <h2 class="title-list">Phim mới cập nhật</h2>
+            <div class="list-film"></div>
+            <div class="list-page">
+                <div class="first-page page-item">
+                    <a href="#" >Trang đầu</a>
+                </div>
+                <div class="page-item current-page">
+                    <a href="#" >1</a>
+                </div>
+                <div class="page-item">
+                    <a href="#" >2</a>
+                </div>
+                <div class="page-item">
+                    <a href="#" >3</a>
+                </div>
+                <div class="page-item">
+                    <a href="#" >4</a>
+                </div>
+                <div class="final-page page-item">
+                    <a href="#" >Trang cuối</a>
+                </div>
+            </div>
+        </section> -->
         
+        <div id="film" class="film-modal">
+            <iframe class="video-block" src="https://vie.haiphim.com/share/40cccad2ac57c29035a432356f3c978d">
+            </iframe>
+            <div class="eps-btn">Danh sách tập phim</div>
+            <!-- <div class="list-eps">
+                <span class="item-ep">1</span>
+                <span class="item-ep">2</span>
+                <span class="item-ep">3</span>
+                <span class="item-ep">4</span>
+                <span class="item-ep">5</span>
+                <span class="item-ep">6</span>
+                <span class="item-ep">7</span>
+                <span class="item-ep">8</span>
+                <span class="item-ep">9</span>
+                <span class="item-ep">10</span>
+                <span class="item-ep">11</span>
+                <span class="item-ep">12</span>
+                <span class="item-ep">13</span>
+                <span class="item-ep">14</span>
+                <span class="item-ep">15</span>
+                <span class="item-ep">16</span>
+                <span class="item-ep">17</span>
+                <span class="item-ep">18</span>
+                <span class="item-ep">19</span>
+                <span class="item-ep">20</span>
+                <span class="item-ep">21</span>
+                <span class="item-ep">22</span>
+                <span class="item-ep">23</span>
+                <span class="item-ep">24</span>
+                <span class="item-ep">25</span>
+                <span class="item-ep">26</span>
+                <span class="item-ep">27</span>
+                <span class="item-ep">28</span>
+                <span class="item-ep">29</span>
+                <span class="item-ep">30</span>
+                <span class="item-ep">10</span>
+                <span class="item-ep">11</span>
+                <span class="item-ep">12</span>
+                <span class="item-ep">13</span>
+                <span class="item-ep">14</span>
+                <span class="item-ep">15</span>
+                <span class="item-ep">16</span>
+                <span class="item-ep">17</span>
+                <span class="item-ep">18</span>
+                <span class="item-ep">19</span>
+                <span class="item-ep">20</span>
+                <span class="item-ep">21</span>
+                <span class="item-ep">22</span>
+                <span class="item-ep">23</span>
+                <span class="item-ep">24</span>
+                <span class="item-ep">25</span>
+                <span class="item-ep">26</span>
+                <span class="item-ep">27</span>
+                <span class="item-ep">28</span>
+                <span class="item-ep">29</span>
+                <span class="item-ep">30</span>
+                <span class="item-ep">10</span>
+                <span class="item-ep">11</span>
+                <span class="item-ep">12</span>
+                <span class="item-ep">13</span>
+                <span class="item-ep">14</span>
+                <span class="item-ep">15</span>
+                <span class="item-ep">16</span>
+                <span class="item-ep">17</span>
+                <span class="item-ep">18</span>
+                <span class="item-ep">19</span>
+                <span class="item-ep">20</span>
+                <span class="item-ep">21</span>
+                <span class="item-ep">22</span>
+                <span class="item-ep">23</span>
+                <span class="item-ep">24</span>
+                <span class="item-ep">25</span>
+                <span class="item-ep">26</span>
+                <span class="item-ep">27</span>
+                <span class="item-ep">28</span>
+                <span class="item-ep">29</span>
+                <span class="item-ep">30</span>
+                <span class="item-ep">10</span>
+                <span class="item-ep">11</span>
+                <span class="item-ep">12</span>
+                <span class="item-ep">13</span>
+                <span class="item-ep">14</span>
+                <span class="item-ep">15</span>
+                <span class="item-ep">16</span>
+                <span class="item-ep">17</span>
+                <span class="item-ep">18</span>
+                <span class="item-ep">19</span>
+                <span class="item-ep">20</span>
+                <span class="item-ep">21</span>
+                <span class="item-ep">22</span>
+                <span class="item-ep">23</span>
+                <span class="item-ep">24</span>
+                <span class="item-ep">25</span>
+                <span class="item-ep">26</span>
+                <span class="item-ep">27</span>
+                <span class="item-ep">28</span>
+                <span class="item-ep">29</span>
+                <span class="item-ep">30</span>
+                <span class="item-ep">10</span>
+                <span class="item-ep">11</span>
+                <span class="item-ep">12</span>
+                <span class="item-ep">13</span>
+                <span class="item-ep">14</span>
+                <span class="item-ep">15</span>
+                <span class="item-ep">16</span>
+                <span class="item-ep">17</span>
+                <span class="item-ep">18</span>
+                <span class="item-ep">19</span>
+                <span class="item-ep">20</span>
+                <span class="item-ep">21</span>
+                <span class="item-ep">22</span>
+                <span class="item-ep">23</span>
+                <span class="item-ep">24</span>
+                <span class="item-ep">25</span>
+                <span class="item-ep">26</span>
+                <span class="item-ep">27</span>
+                <span class="item-ep">28</span>
+                <span class="item-ep">29</span>
+                <span class="item-ep">30</span>
+                <span class="item-ep">10</span>
+                <span class="item-ep">11</span>
+                <span class="item-ep">12</span>
+                <span class="item-ep">13</span>
+                <span class="item-ep">14</span>
+                <span class="item-ep">15</span>
+                <span class="item-ep">16</span>
+                <span class="item-ep">17</span>
+                <span class="item-ep">18</span>
+                <span class="item-ep">19</span>
+                <span class="item-ep">20</span>
+                <span class="item-ep">21</span>
+                <span class="item-ep">22</span>
+                <span class="item-ep">23</span>
+                <span class="item-ep">24</span>
+                <span class="item-ep">25</span>
+                <span class="item-ep">26</span>
+                <span class="item-ep">27</span>
+                <span class="item-ep">28</span>
+                <span class="item-ep">29</span>
+                <span class="item-ep">30</span>
+                <span class="item-ep">10</span>
+                <span class="item-ep">11</span>
+                <span class="item-ep">12</span>
+                <span class="item-ep">13</span>
+                <span class="item-ep">14</span>
+                <span class="item-ep">15</span>
+                <span class="item-ep">16</span>
+                <span class="item-ep">17</span>
+                <span class="item-ep">18</span>
+                <span class="item-ep">19</span>
+                <span class="item-ep">20</span>
+                <span class="item-ep">21</span>
+                <span class="item-ep">22</span>
+                <span class="item-ep">23</span>
+                <span class="item-ep">24</span>
+                <span class="item-ep">25</span>
+                <span class="item-ep">26</span>
+                <span class="item-ep">27</span>
+                <span class="item-ep">28</span>
+                <span class="item-ep">29</span>
+                <span class="item-ep">30</span>
+                <span class="item-ep">10</span>
+                <span class="item-ep">11</span>
+                <span class="item-ep">12</span>
+                <span class="item-ep">13</span>
+                <span class="item-ep">14</span>
+                <span class="item-ep">15</span>
+                <span class="item-ep">16</span>
+                <span class="item-ep">17</span>
+                <span class="item-ep">18</span>
+                <span class="item-ep">19</span>
+                <span class="item-ep">20</span>
+                <span class="item-ep">21</span>
+                <span class="item-ep">22</span>
+                <span class="item-ep">23</span>
+                <span class="item-ep">24</span>
+                <span class="item-ep">25</span>
+                <span class="item-ep">26</span>
+                <span class="item-ep">27</span>
+                <span class="item-ep">28</span>
+                <span class="item-ep">29</span>
+                <span class="item-ep">30</span>
+                <span class="item-ep">10</span>
+                <span class="item-ep">11</span>
+                <span class="item-ep">12</span>
+                <span class="item-ep">13</span>
+                <span class="item-ep">14</span>
+                <span class="item-ep">15</span>
+                <span class="item-ep">16</span>
+                <span class="item-ep">17</span>
+                <span class="item-ep">18</span>
+                <span class="item-ep">19</span>
+                <span class="item-ep">20</span>
+                <span class="item-ep">21</span>
+                <span class="item-ep">22</span>
+                <span class="item-ep">23</span>
+                <span class="item-ep">24</span>
+                <span class="item-ep">25</span>
+                <span class="item-ep">26</span>
+                <span class="item-ep">27</span>
+                <span class="item-ep">28</span>
+                <span class="item-ep">29</span>
+                <span class="item-ep">30</span>
+
+
+            </div> -->
+
+        </div>
+
+        <footer id="footer">
+            Made for fun by @<a href="#">BBP.</a>
+        </footer>
+
     </div>
-    
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>
