@@ -168,7 +168,7 @@ dataFilm(function (datas) {
     ////////////////
     searchBtn.onclick = function () {
         listFilm.innerHTML = '';
-        var apiSearch = `https://ophim.tv/_next/data/EdPTJFKDsGXjfsHhzTxX1/tim-kiem.json?keyword=${inputBox.value}`;
+        var apiSearch = `https://ophim.tv/_next/data/m5wySfMXDukfAvbiXTiQO/tim-kiem.json?keyword=${inputBox.value}`;
         function dataFilm(callback) {
             fetch(apiSearch)
                 .then(response => response.json())
