@@ -70,6 +70,8 @@ function renderFilm(item) {
         var slug = item.getAttribute('id');
         var filmModal = document.createElement('div');
         filmModal.classList.add('film-modal');
+        // When click film, episode 1st will show (index 0)
+        filmModal.setAttribute('id', 0);
 
         var epsBtn = document.createElement('div');
         epsBtn.classList.add('btn-eps');
@@ -100,6 +102,10 @@ function renderFilm(item) {
                     itemEp.classList.add('item-ep');
                     itemEp.setAttribute('id', listEps.indexOf(item));
                     itemEp.innerText = `${item.name}`;
+                    // /////////////// ------- ///////////////
+                    if (itemEp.getAttribute('id') === filmModal.getAttribute('id')) {
+                        itemEp.classList.add('current-ep');
+                    }
                     listEpsEl.appendChild(itemEp);
                     // var itemEp = `<div class="item-ep">${item.name}</div>`;
                     // itemEps.push(itemEp);
@@ -119,6 +125,7 @@ function renderFilm(item) {
                             <iframe class="video-block" src="${srcVideo}">
                             </iframe>
                             `;
+                            filmModal.setAttribute('id', index);
                             listEpsEl.remove();
                         }
                     })
