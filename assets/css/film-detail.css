@@ -1,0 +1,107 @@
+#content {
+    padding: 90px 200px;
+    padding-top: 120px;
+}
+
+.breadcrumb {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.breadcrumb a {
+    color: #fff;
+    text-decoration: none;
+}
+.film-detail {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    gap: 40px;
+}
+.content__left img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.content__right {
+    color: #ccc;
+}
+.content__right .name {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.content__right .origin-name {
+    font-size: 20px;
+    /* font-weight: 700; */
+    margin-bottom: 20px;
+}
+.content__right .lst-desc  {
+    display: flex;
+    gap: 50px;
+}
+.content__right .btn-watch {
+    width: 140px;
+    height: 50px;
+    color: #fff;
+    background-color: rgb(77, 141, 236);
+    text-decoration: none;
+    margin-top: 30px;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    font-size: 15px;
+    border-radius: 0 10px 0 10px;
+}
+
+
+
+/* RESPONSIVE */
+@media screen and (max-width: 1200px) {
+    #content {
+        padding: 90px 100px;
+        padding-top: 120px;
+    }
+    .film-detail {
+        display: block;
+    }
+    .content__left img{
+        width: 100%;
+        border-radius: 10px;
+    }
+    .content__right {
+        color: #ccc;
+    }
+    .content__right .name {
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+    .content__right .origin-name {
+        font-size: 20px;
+        /* font-weight: 700; */
+        margin-bottom: 20px;
+    }
+    .content__right .lst-desc  {
+        display: flex;
+        gap: 50px;
+    }
+    .content__right .btn-watch {
+        width: 140px;
+        height: 50px;
+        color: #fff;
+        background-color: rgb(77, 141, 236);
+        text-decoration: none;
+        margin-top: 30px;
+        display: block;
+        text-align: center;
+        line-height: 50px;
+        font-size: 15px;
+        border-radius: 0 10px 0 10px;
+    }
+}
